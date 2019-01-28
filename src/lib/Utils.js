@@ -45,4 +45,16 @@ export function getCSVContentFromString(csvString) {
     };
     return CSVParser.parse(csvString, csvParserConfig);
 }
+export function calculateTax(salary) {
+    if (_.isNumber(salary)) {
+        
+    }
+    return false;
+}
+/**
+ * Create data type download using 
+ */
+export function createDataDownload() {
+
+}
 export default { validateMimeType, readFileContent, getCSVContentFromString };

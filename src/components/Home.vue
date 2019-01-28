@@ -42,6 +42,7 @@
           <label class="custom-file-label" for="customFile">Choose file</label>
         </div>
       </form>
+      <download-file></download-file>
       <app-table></app-table>
     </main>
 
@@ -61,10 +62,11 @@
 import HelpModal from "@/components/Help";
 import store from "@/store";
 import AppTable from "@/components/Table";
+import DownloadFile from "@/components/DownloadFile";
 import { readFileContent } from "@/lib/Utils";
 export default {
   name: "HelloWorld",
-  components: { HelpModal, AppTable },
+  components: { HelpModal, AppTable, DownloadFile },
   data: function() {
     //find the list of years
     let curYear = Number(new Date().getFullYear());
