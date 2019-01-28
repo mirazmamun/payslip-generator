@@ -45,11 +45,27 @@ export function getCSVContentFromString(csvString) {
     };
     return CSVParser.parse(csvString, csvParserConfig);
 }
-export function calculateTax(salary) {
+export function calculateTax(salaryPerAnnum = Number(0.0)) {
+    var calculateTax = Number(0.0);
     if (_.isNumber(salary)) {
-        
+        //implement the steps
+        switch (salaryPerAnnum) {
+            case salaryPerAnnum >= Number(180001):
+            calculateTax = (Number(54232) + Number((salaryPerAnnum - 180000) * 0.45))
+                break;
+            case salaryPerAnnum >= Number(87, 001):
+                break;
+            case salaryPerAnnum > Number(37001):
+                break;
+            case salaryPerAnnum > Number(18001):
+                break;
+            case salaryPerAnnum >= Number(0.0):
+                calculateTax = Number(0.0);
+            default:
+                break;
+        }
     }
-    return false;
+    return calculateTax;
 }
 /**
  * Create data type download using 
@@ -57,4 +73,4 @@ export function calculateTax(salary) {
 export function createDataDownload() {
 
 }
-export default { validateMimeType, readFileContent, getCSVContentFromString };
+export default { validateMimeType, readFileContent, getCSVContentFromString, calculateTax };
